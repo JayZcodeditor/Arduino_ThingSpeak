@@ -40,7 +40,7 @@ void loop() {
       float temperature = dht.readTemperature();  // Read temperature from the DHT sensor
       float humidity = dht.readHumidity();    // Read humidity from the DHT sensor
 
-      if (!isnan(temp) && !isnan(humid)) {  // Check if the readings are valid
+      if (!isnan(temperature) && !isnan(humidity)) {  // Check if the readings are valid
         String serverPath = serverName + "&field1=" + String(temperature, 2) + "&field2=" + String(humidity, 2);
         http.begin(client, serverPath.c_str());
         int httpResponseCode = http.GET();
